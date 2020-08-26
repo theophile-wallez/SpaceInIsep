@@ -1,0 +1,469 @@
+@startuml
+
+title __SAMPLE's Class Diagram__\n
+
+  namespace sample {
+    class sample.Ammo {
+        ~ isHuman : boolean
+        ~ velocity : double
+        - playPlayerGotHit : MediaPlayer
+        - playshipDeadSound : MediaPlayer
+        + update()
+        ~ Ammo()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Barriere {
+        - barriere_20Image : Image
+        - barriere_40Image : Image
+        - barriere_60Image : Image
+        + update()
+        ~ Barriere()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Bonus {
+        {static} + isAnyBonusActive : boolean
+        {static} - bonusAmmoX2Path : String
+        {static} - bonusDamagePath : String
+        {static} - bonusHealthImagePath : String
+        {static} - bonusScoreX2Path : String
+        {static} - bonusTimeSlowedImagePath : String
+        {static} + addBonus()
+        ~ Bonus()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.BonusAmmoX2 {
+        {static} + bonusAmmoX2Time : int
+        {static} + isAmmoX2 : boolean
+        - hasCollided : boolean
+        - isTimerStarted : boolean
+        + update()
+        ~ BonusAmmoX2()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.BonusDamage {
+        {static} + bonusDamageTime : int
+        {static} + isDamageIncreased : boolean
+        - hasCollided : boolean
+        - isTimerStarted : boolean
+        + update()
+        ~ BonusDamage()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.BonusHealth {
+        - playBonusHealthSound : MediaPlayer
+        + update()
+        ~ BonusHealth()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.BonusScoreX2 {
+        {static} + bonusScoreX2Time : int
+        {static} + isScorex2 : boolean
+        - hasCollided : boolean
+        - isTimerStarted : boolean
+        + update()
+        ~ BonusScoreX2()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.BonusTimeSlowed {
+        {static} + isTimeSLowed : boolean
+        {static} ~ bonusTime : int
+        ~ hasCollided : boolean
+        ~ isTimerStarted : boolean
+        - playBonusTimeSlowedSound : MediaPlayer
+        + update()
+        ~ BonusTimeSlowed()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy {
+        ~ initialHealth : int
+        ~ random : Random
+        ~ speed : int
+        ~ t : double
+        ~ t2 : double
+        ~ t3 : double
+        ~ timeMoveEnemy : double
+        ~ tmpPos : int
+        ~ tmpX : int
+        + Enemy()
+        + mayShoot()
+        + mayShootBossLevel3()
+        + mayShootLevel3()
+        + moveBossLevel3()
+        + moveEnemyLevel1()
+        + moveEnemyLevel2()
+        + moveEnemyLevel3Enemy60()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy120Level1 {
+        ~ timer : int
+        - enemy120_Level1_100Image : Image
+        - enemy120_Level1_120Image : Image
+        - enemy120_Level1_20Image : Image
+        - enemy120_Level1_40Image : Image
+        - enemy120_Level1_60Image : Image
+        - enemy120_Level1_80Image : Image
+        + Enemy120Level1()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy120Level2 {
+        - enemy120_Level2_100Image : Image
+        - enemy120_Level2_120Image : Image
+        - enemy120_Level2_20Image : Image
+        - enemy120_Level2_40Image : Image
+        - enemy120_Level2_60Image : Image
+        - enemy120_Level2_80Image : Image
+        + Enemy120Level2()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy120Level3 {
+        - enemy120_Level3_100Image : Image
+        - enemy120_Level3_120Image : Image
+        - enemy120_Level3_20Image : Image
+        - enemy120_Level3_40Image : Image
+        - enemy120_Level3_60Image : Image
+        - enemy120_Level3_80Image : Image
+        + Enemy120Level3()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy180Level2 {
+        - enemy180_Level2_100Image : Image
+        - enemy180_Level2_120Image : Image
+        - enemy180_Level2_140Image : Image
+        - enemy180_Level2_160Image : Image
+        - enemy180_Level2_180Image : Image
+        - enemy180_Level2_20Image : Image
+        - enemy180_Level2_40Image : Image
+        - enemy180_Level2_60Image : Image
+        - enemy180_Level2_80Image : Image
+        + Enemy180Level2()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy180Level3 {
+        - enemy180_Level3_100Image : Image
+        - enemy180_Level3_120Image : Image
+        - enemy180_Level3_140Image : Image
+        - enemy180_Level3_160Image : Image
+        - enemy180_Level3_180Image : Image
+        - enemy180_Level3_20Image : Image
+        - enemy180_Level3_40Image : Image
+        - enemy180_Level3_60Image : Image
+        - enemy180_Level3_80Image : Image
+        + Enemy180Level3()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy300Level3 {
+        - enemy600_Level3_100Image : Image
+        - enemy600_Level3_200Image : Image
+        - enemy600_Level3_300Image : Image
+        - enemy600_Level3_400Image : Image
+        - enemy600_Level3_500Image : Image
+        - enemy600_Level3_600Image : Image
+        - islifebarcreated : Boolean
+        + Enemy300Level3()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy60Level1 {
+        ~ timer : int
+        - enemy60_Level1_20Image : Image
+        - enemy60_Level1_40Image : Image
+        - enemy60_Level1_60Image : Image
+        + Enemy60Level1()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Enemy60Level3 {
+        + touchDown : boolean
+        + touchUp : boolean
+        - enemy60_Level3_20Image : Image
+        - enemy60_Level3_40Image : Image
+        - enemy60_Level3_60Image : Image
+        + Enemy60Level3()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.GameEngine {
+        {static} + ameliorationPoint : int
+        {static} + isFirstScreen : boolean
+        {static} + isGameRunning : boolean
+        {static} + isLevel : int
+        {static} + nbAmeliorationUpdated : boolean
+        {static} + onetime : boolean
+        {static} + random : Random
+        {static} + root : Pane
+        {static} + score : int
+        {static} + startIncreasingScore : boolean
+        + tabNameScore : String[]
+        + tabScore : int[]
+        ~ stage2 : Stage
+        {static} - d : double
+        - g : Gson
+        {static} - gaussianBlur : GaussianBlur
+        {static} - graphicsContext : GraphicsContext
+        {static} - isLeaderBoardUpdated : boolean
+        {static} - moveText : double
+        {static} - opacityText : double
+        - playVictorySound : MediaPlayer
+        {static} - positionX : int
+        {static} - scoreTemp : double
+        {static} + UpdateAmeliorationPoint()
+        + UpdateLeaderBoard()
+        + addElementsToDisplay()
+        + addOneElementToDisplay()
+        + createContent()
+        + nextLevel()
+        {static} + playGame()
+        {static} + removeElementToDisplay()
+        + setStage()
+        + update()
+        - displayScore()
+        - displayText()
+        - displayTimerText()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.GameObjects {
+        # health : int
+        + GameObjects()
+        + move()
+        + teleportObject()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.LeaderBoard {
+        + Score1 : int
+        + Score2 : int
+        + Score3 : int
+        + Score4 : int
+        + Score5 : int
+        + getScore()
+        + setScore()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Level {
+        {static} + ammoList : List<GameObjects>
+        {static} + barriereList : List<GameObjects>
+        {static} + bonusList : List<GameObjects>
+        {static} + enemy120Level1List : List<GameObjects>
+        {static} + enemy120Level2List : List<GameObjects>
+        {static} + enemy120Level3List : List<GameObjects>
+        {static} + enemy180Level2List : List<GameObjects>
+        {static} + enemy180Level3List : List<GameObjects>
+        {static} + enemy600Level3List : List<GameObjects>
+        {static} + enemy60Level1List : List<GameObjects>
+        {static} + enemy60Level3List : List<GameObjects>
+        {static} + enemyList : List<GameObjects>
+        {static} + gameElements : List<GameObjects>
+        {static} + gameEngine : GameEngine
+        {static} + player : Player
+        {static} + random : Random
+        {static} + starsList : List<GameObjects>
+        {static} + tempPlayer : List<GameObjects>
+        {static} + addObject()
+        {static} + createBarriere()
+        {static} + createStars()
+        {static} + main()
+        {static} + removeGameObject()
+        + start()
+        {static} - update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Level1 {
+        {static} + initLevel1()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Level2 {
+        {static} + initLevel2()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Level3 {
+        {static} + initLevel3()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.LifeBar {
+        + LifeBar()
+        + update()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Player {
+        {static} + damageOfPlayerAmmo : int
+        {static} + healthMax : int
+        {static} + isGamePaused : boolean
+        {static} + isGoingLeft : boolean
+        {static} + isGoingRight : boolean
+        {static} + isShooting : boolean
+        {static} + nbAmeliorationDamage : int
+        {static} + shootOneTime : boolean
+        {static} + velocity : int
+        ~ x : int
+        ~ y : int
+        {static} - motionBlur : MotionBlur
+        - playShootSound : MediaPlayer
+        - playerShip_20Image : Image
+        - playerShip_40Image : Image
+        - playerShip_60Image : Image
+        + addHealth()
+        + buildEventDispatchChain()
+        + getHealth()
+        + keyPressed()
+        + keyReleased()
+        + resetAllStatPlayer()
+        + resetPlayer()
+        + update()
+        ~ Player()
+        - playShootSound()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Ship {
+        # health : int
+        ~ velocity : double
+        - height : double
+        - isHuman : boolean
+        {static} - motionBlurEnemyAmmo : MotionBlur
+        - width : double
+        + shoot()
+        + shootBossLevel3()
+        ~ Ship()
+    }
+  }
+  
+
+  namespace sample {
+    class sample.Stars {
+        - random : Random
+        + update()
+        ~ Stars()
+    }
+  }
+  
+
+  namespace sample {
+    enum TypeOfAmmo {
+      CENTER
+      LEFT
+      RIGHT
+    }
+  }
+  
+
+  sample.Ammo -up-|> sample.GameObjects
+  sample.Ammo o-- sample.TypeOfAmmo : typeOfAmmo
+  sample.Barriere -up-|> sample.GameObjects
+  sample.Bonus -up-|> sample.GameObjects
+  sample.BonusAmmoX2 -up-|> sample.Bonus
+  sample.BonusDamage -up-|> sample.Bonus
+  sample.BonusHealth -up-|> sample.Bonus
+  sample.BonusScoreX2 -up-|> sample.Bonus
+  sample.BonusTimeSlowed -up-|> sample.Bonus
+  sample.Enemy -up-|> sample.Ship
+  sample.Enemy120Level1 -up-|> sample.Enemy
+  sample.Enemy120Level2 -up-|> sample.Enemy
+  sample.Enemy120Level3 -up-|> sample.Enemy
+  sample.Enemy180Level2 -up-|> sample.Enemy
+  sample.Enemy180Level3 -up-|> sample.Enemy
+  sample.Enemy300Level3 -up-|> sample.Enemy
+  sample.Enemy60Level1 -up-|> sample.Enemy
+  sample.Enemy60Level3 -up-|> sample.Enemy
+  sample.GameEngine o-- sample.LeaderBoard : LeaderBoard
+  sample.GameObjects -up-|> javafx.scene.shape.Rectangle
+  sample.Level -up-|> javafx.application.Application
+  sample.Level1 -up-|> sample.Level
+  sample.Level2 -up-|> sample.Level
+  sample.Level3 -up-|> sample.Level
+  sample.LifeBar -up-|> sample.GameObjects
+  sample.Player .up.|> javafx.event.EventTarget
+  sample.Player -up-|> sample.Ship
+  sample.Ship -up-|> sample.GameObjects
+  sample.Stars -up-|> sample.GameObjects
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
